@@ -6,8 +6,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="style.css" rel="stylesheet" type="text/css">
-    
    
+    
 </head>
 <body>
 
@@ -27,12 +27,30 @@
         </nav>
   
 <div class="container">
+     <script>
+    function formKontrol(){
+        var kadi = document.forms["uye_formu"]["kadi"].value; 
+        var sifre = document.forms["uye_formu"]["sifre"].value;
+        
+        if(kadi!="b181210450" || sifre!="123"){
+            alert.("Dogru");
+            return true;
+        }
+        else{
+             alert.("yanlış");
+            return false;
+        }
+           
+    }
+        
+    </script>
+    
 
-<form action="" name="uye_formu" method="post" onsubmit="return isValid(this)">    
+<form name="uye_formu">    
 <section>
-<input class="giris-yap" type="text" name="kadi" id="kadi" placeholder="Kullanıcı adı"/><input class="giris-yap" type="password" id="sifre" name="parola" placeholder="Şifreniz"/>
-<button>GİRİŞ YAP</button>
-<input class="radio-button" name="" value="" type="checkbox"/>
+<input class="giris-yap" type="text" name="kadi"  placeholder="Kullanıcı adı" id="kadi"/><input class="giris-yap" type="password" name="sifre" placeholder="Şifreniz" id="sifre" />
+<button onclick="return formKontrol()">GİRİŞ YAP</button>
+
 </section>
     </form>
 
